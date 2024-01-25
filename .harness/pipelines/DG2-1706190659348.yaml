@@ -18,20 +18,21 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: dockerbuild
                   name: docker_build
-                  spec:
-                    image: plugins/docker
-                    settings:
-                      dry_run: "true"
-                      repo: hello/world
-                      tags: latest
-                  timeout: ""
-                  type: Plugin
+                  identifier: dockerbuild
+                  template:
+                    templateRef: as
+                    versionLabel: "1"
+              - step:
+                  name: s1
+                  identifier: s1
+                  template:
+                    templateRef: as
+                    versionLabel: "1"
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI

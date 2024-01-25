@@ -23,12 +23,6 @@ pipeline:
                   template:
                     templateRef: as
                     versionLabel: "1"
-              - step:
-                  name: s1
-                  identifier: s1
-                  template:
-                    templateRef: as
-                    versionLabel: "1"
           platform:
             os: Linux
             arch: Amd64
@@ -36,3 +30,24 @@ pipeline:
             type: Cloud
             spec: {}
         type: CI
+    - stage:
+        name: Build2
+        identifier: Build2
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  name: B2
+                  identifier: B2
+                  template:
+                    templateRef: as
+                    versionLabel: "1"

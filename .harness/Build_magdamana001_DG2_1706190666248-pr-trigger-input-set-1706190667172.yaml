@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_magdamana001_DG2_1706190666248-pr-trigger-input-set
+  identifier: Build_magdamana001_DG2_1706190666248prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_magdamana001_DG2_1706190666248
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>

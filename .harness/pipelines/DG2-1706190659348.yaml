@@ -23,6 +23,13 @@ pipeline:
                   template:
                     templateRef: as
                     versionLabel: "1"
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
+                    command: ls
           platform:
             os: Linux
             arch: Amd64
@@ -30,6 +37,7 @@ pipeline:
             type: Cloud
             spec: {}
         type: CI
+        description: ""
     - stage:
         name: Build2
         identifier: Build2
